@@ -29,7 +29,7 @@ const mregex = new RegExp(mtags.map(label => `<mlhp-(${label})>(.*?)</mlhp-${lab
 const lregex = new RegExp(ltags.map(label => `<mlhp-(${label})>(.*?)</mlhp-${label}>`).join('|'), 'msg')
 
 flags.defineInteger('port', 8080, 'Port to listen on');
-flags.defineString('dir', './pages', 'Direcotry that has pages in it');
+flags.defineString('dir', './pages', 'Directory that has pages in it');
 
 flags.parse();
 util.promisify(exec)(process.platform == 'win32' ? 'python3 -m pip install munch' : 'pip3 install munch', {
